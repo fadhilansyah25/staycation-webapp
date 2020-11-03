@@ -42,3 +42,11 @@
 @import "spinners";
 @import "utilities";
 @import "print";
+
+.brand-text-icon {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    color: $primary;
+}
