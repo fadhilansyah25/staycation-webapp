@@ -46,7 +46,47 @@
 .brand-text-icon {
     font-family: "Roboto", sans-serif;
     font-style: normal;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 26px;
     color: $primary;
+
+    &:hover {
+        text-decoration: none;
+        color: $primary;
+    }
+}
+
+header {
+    border-bottom: 1px solid $gray-200;
+    width: 100%;
+    position: relative;
+
+    .navbar {
+        height: 80px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+
+        ul.navbar-nav {
+            li.nav-item {
+                &.active {
+                    a.nav-link {
+                        color: $primary;
+                    }
+                }
+                a {
+                    &.nav-link {
+                        letter-spacing: 0.2px;
+                        color: $gray-900;
+                        padding-left: 2rem;
+                        padding-right: 2rem;
+
+                        &:hover {
+                            color: $primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

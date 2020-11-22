@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from 'Component/Button'
+import Button from 'Component/Button/Button'
 
 export default function Logo() {
     return (
