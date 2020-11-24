@@ -66,6 +66,7 @@ header {
         font-family: "Roboto", sans-serif;
         font-weight: 500;
         font-size: 16px;
+        padding: 0;
 
         ul.navbar-nav {
             li.nav-item {
@@ -78,8 +79,7 @@ header {
                     &.nav-link {
                         letter-spacing: 0.2px;
                         color: $gray-900;
-                        padding-left: 2rem;
-                        padding-right: 2rem;
+                        padding-left: 5rem;
 
                         &:hover {
                             color: $primary;

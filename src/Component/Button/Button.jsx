@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import propTypes from 'prop-types';
-
+import './Button.scss';
 
 export default function Button(props) {
     const className = [props.className];
@@ -74,9 +74,11 @@ Button.propTypes = {
     target: propTypes.string,
     href: propTypes.string,
     className: propTypes.string,
+    isPrimary: propTypes.bool,
     isDisabled: propTypes.bool,
     isLoading: propTypes.bool,
     isSmall: propTypes.bool,
+    isLarge: propTypes.bool,
     isBlock: propTypes.bool,
     isExternal: propTypes.bool,
     hasShadow: propTypes.bool
