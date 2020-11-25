@@ -1,0 +1,29 @@
+.meta-desc {
+    position: absolute;
+    bottom: 0;
+    left: 1.5rem;
+    line-height: 4px;
+    z-index: 3;
+
+    .name {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        /* identical to box height */
+
+        letter-spacing: 0.015em;
+        color: #FFFFFF;
+    }
+
+    .location {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        letter-spacing: 0.015em;
+        text-transform: capitalize;
+
+        color: #FFFFFF;
+    }
+}

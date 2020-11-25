@@ -1,6 +1,6 @@
 import React from 'react';
 import './Hero.scss';
-import { numberFormat } from '../../Function/FormatingNumber';
+import { numberFormat } from 'Function/FormatingNumber';
 
 import IconCities from 'Assets/Images/Icons/icon-cities.svg';
 import IconPlace from 'Assets/Images/Icons/icon-place.svg';
@@ -39,7 +39,7 @@ export default function Hero(props) {
                             <img src={IconTraveler} alt="" />
                             <h6 className="mt-3">
                                 {numberFormat(props.data.hero.travelers)}{" "}
-                                <span className="text-gray-500 font-weight-light">
+                                <span className="text-gray-500 font-weight">
                                     Traveler
                                 </span>
                             </h6>
@@ -48,7 +48,7 @@ export default function Hero(props) {
                             <img src={IconCities} alt="" />
                             <h6 className="mt-3">
                                 {numberFormat(props.data.hero.treasures)}{" "}
-                                <span className="text-gray-500 font-weight-light">
+                                <span className="text-gray-500 font-weight">
                                     Treasures
                                 </span>
                             </h6>
@@ -57,7 +57,7 @@ export default function Hero(props) {
                             <img src={IconPlace} alt="" />
                             <h6 className="mt-3">
                                 {numberFormat(props.data.hero.cities)}{" "}
-                                <span className="text-gray-500 font-weight-light">
+                                <span className="text-gray-500 font-weight">
                                     Cities/Hotel
                                 </span>
                             </h6>

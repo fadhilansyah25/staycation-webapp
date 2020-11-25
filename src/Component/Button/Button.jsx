@@ -25,7 +25,8 @@ export default function Button(props) {
                 className={className.join(" ")}
                 style={props.style}>
                 {
-                    props.isLoading ? (<Fragment>
+                    props.isLoading ? (
+                    <Fragment>
                         <span className="spinner-border spinner-border-sm mx-5"></span>
                         <span className="sr-only">Loading...</span>
                     </Fragment>) : (props.children)
