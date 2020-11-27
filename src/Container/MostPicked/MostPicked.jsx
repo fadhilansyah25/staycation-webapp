@@ -9,7 +9,7 @@ import { dollarCurrency } from 'Function/FormatingNumber';
 function MostPicked(props) {
     return (
         <section className="container mostpicked" ref={props.refMostPicked}>
-            <h4 className="mb-3">Most Picked</h4>
+            <h4>Most Picked</h4>
             <div className="container-grid">
                 {/* {props.data.mostPicked.map((item, index) => {
                     return (

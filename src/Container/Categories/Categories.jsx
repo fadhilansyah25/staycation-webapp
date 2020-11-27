@@ -1,7 +1,7 @@
 import React from 'react';
 
-import TagInfo from '../TagInfo/TagInfo';
-import Button from '../Button/Button'
+import TagInfo from '../../Component/TagInfo/TagInfo';
+import Button from '../../Component/Button/Button'
 
 export default function Categories({ data }) {
     return (
@@ -10,14 +10,14 @@ export default function Categories({ data }) {
                 data.map((category, index1) => {
                     return (
                         <div className="categories" key={`category${index1}`}>
-                            <h4 className="mb-3">{category.name}</h4>
+                            <h4>{category.name}</h4>
                             <div className="container-grid">
                                 {
                                     category.items.length === 0 ?
                                         (<div className="row">
                                             <div className="col-auto align-items-center">
                                                 There is no property at this category
-                            </div>
+                                            </div>
                                         </div>)
                                         :
                                         (category.items.map((item, index2) => {

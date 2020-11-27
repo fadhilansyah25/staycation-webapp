@@ -5,6 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
+@import "colorVariables";
 @import "functions";
 @import "variables";
 @import "mixins";
@@ -46,6 +47,19 @@
 
 section {
     margin-top: 90px;
+}
+
+h4 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.015em;
+    text-transform: capitalize;
+    margin-bottom: 1.25rem;
+
+    color: #152C5B;
 }
 
 .categories:nth-child(-n+2) {
@@ -131,6 +145,7 @@ header {
             font-size: 1.125rem;
             margin-bottom: 2px;
         }
+
         span {
             font-size: .875rem;
         }
@@ -147,14 +162,22 @@ header {
             margin: 0;
             position: absolute;
             content: "";
-            top: 0; left: 0; right: 0; bottom: 0; transform: scale(1.1);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transform: scale(1.1);
             transition: .25s transform ease-in-out;
         }
 
         &::after {
             position: absolute;
             content: "";
-            top: 0; left: 0; right: 0; bottom: 0; transform: scale(1.1);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transform: scale(1.1);
             transition: .5s transform ease-in-out;
             z-index: 2;
             @include gradient-y(rgba(218, 218, 218, 0), rgba(175, 164, 164, 0.34), 0%, 100%)
@@ -166,16 +189,21 @@ header {
             color: white;
             position: absolute;
             padding: 15px;
-            top: 0; bottom: 0;
+            top: 0;
+            bottom: 0;
             line-height: 1rem;
-            width: 100%; transform: translateY(0);
+            width: 100%;
+            transform: translateY(0);
             transition: .3s transform ease-in-out;
-            display: flex; justify-content: flex-end; flex-direction: column;
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: column;
 
             h5 {
                 font-size: 1.125rem;
                 margin-bottom: 2px;
             }
+
             span {
                 font-size: .875rem;
             }
@@ -185,9 +213,11 @@ header {
             .meta-wrapper {
                 transform: translateY(-10px);
             }
+
             &:after {
                 transform: scale(1);
             }
+
             .img-wrapper {
                 transform: scale(1);
             }
