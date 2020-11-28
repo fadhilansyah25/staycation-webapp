@@ -2,24 +2,18 @@ import React from "react";
 import StarRate from "Component/StarRate/StarRate";
 import imageFrame from "Assets/Images/img-testi-frame.svg";
 import "./Testimonials.scss";
-import Button from 'Component/Button/Button'
+import Button from "Component/Button/Button";
 
 export default function Testimonials({ data }) {
   return (
     <section className="container">
       <div className="row align-items-center">
-        <div className="col-auto" style={{ marginRight: "70px" }}>
-          <div className="testimonial-hero">
-            <img
-              src={data.imageUrl}
-              alt="Testimonial"
-              className="img-testimonial"
-            />
-            <img
-              src={imageFrame}
-              alt="Testimonial-frame"
-              className="img-testimonial-frame"
-            />
+        <div className="col-auto testimonial-img" style={{ marginRight: "70px" }}>
+          <div className="image-testimonial">
+            <img src={data.imageUrl} alt="Testimonial" />
+          </div>
+          <div className="img-frame">
+            <img src={imageFrame} alt="Testimonial-frame" />
           </div>
         </div>
         <div className="col-6 testimonial-desc" style={{ padding: 0 }}>
@@ -36,11 +30,7 @@ export default function Testimonials({ data }) {
           <p>
             {data.familyName}, {data.familyOccupation}
           </p>
-          <Button
-            className="btn"
-          >
-            Read a Story
-          </Button>
+          <Button className="btn">Read a Story</Button>
         </div>
       </div>
     </section>

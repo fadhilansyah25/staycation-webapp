@@ -1,0 +1,50 @@
+footer .container {
+  margin-top: 90px;
+  border-top: 2px solid rgb(204, 204, 204);
+  font-family: "Roboto", sans-serif;
+
+  .row {
+    padding-top: 36px;
+  }
+
+  .col-3, .col-auto{
+    padding: 0;
+  }
+  
+
+  .logo {
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 30px;
+    margin-bottom: 20px;
+    /* identical to box height */
+
+    color: #152c5b;
+  }
+
+  h3 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #152c5b;
+  }
+
+  ul {
+    margin-top: 22px;
+    padding: 0;
+    li {
+      list-style: none;
+      margin-bottom: 10px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+    }
+  }
+}
