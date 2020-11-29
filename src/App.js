@@ -1,13 +1,14 @@
 import './Assets/scss/style.scss';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import LandingPage from 'Pages/LandingPage';
-
+import PageDetails from 'Pages/PageDetails';
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <Route path="/" component={LandingPage}></Route>
+        <Route exact path="/" component={LandingPage}></Route>
+        <Route exact path="/pagedetails" component={PageDetails}></Route>
       </Router>
     </div>
   );
