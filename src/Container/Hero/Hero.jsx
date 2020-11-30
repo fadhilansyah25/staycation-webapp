@@ -1,6 +1,6 @@
 import React from "react";
 import "./Hero.scss";
-import { numberFormat } from "Function/FormatingNumber";
+import { numberFormat } from "utils/FormatingNumber";
 
 import IconCities from "Assets/Images/Icons/icon-cities.svg";
 import IconPlace from "Assets/Images/Icons/icon-place.svg";

@@ -2,7 +2,7 @@ import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import InputNumber from "./InputNumber";
 
-class TestInput extends React.Component {
+class TestInputNumber extends React.Component {
   state = {
     value: "",
   };
@@ -24,7 +24,7 @@ class TestInput extends React.Component {
 }
 
 const setup = () => {
-  const { container } = render(<TestInput />);
+  const { container } = render(<TestInputNumber />);
   const input = container.querySelector(`input.form-control[name='value']`);
 
   return {

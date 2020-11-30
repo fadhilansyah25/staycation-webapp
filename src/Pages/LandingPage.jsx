@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 
 import Header from "Container/Header/Header";
 import Hero from "Container/Hero/Hero";
@@ -18,7 +18,7 @@ export default class LandingPage extends Component {
 
   render() {
     return (
-      <Fragment>
+      <>
         <Header {...this.props} />
         <Fade bottom>
           <Hero data={landingPage} refMostPicked={this.refMostPicked} />
@@ -31,7 +31,7 @@ export default class LandingPage extends Component {
           <Testimonials data={landingPage.testimonial} />
         </Fade>
         <Footer></Footer>
-      </Fragment>
+      </>
     );
   }
 }

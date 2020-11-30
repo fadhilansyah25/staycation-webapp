@@ -3,7 +3,7 @@ import React from "react";
 import TagInfo from "Component/TagInfo/TagInfo";
 // import MetaDesc from 'Component/MetaDesc/MetaDesc';
 import Button from "Component/Button/Button";
-import { dollarCurrency } from "Function/FormatingNumber";
+import { dollarCurrency } from "utils/FormatingNumber";
 import Fade from "react-reveal/Fade";
 
 function MostPicked(props) {
