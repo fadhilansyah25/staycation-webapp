@@ -4,7 +4,6 @@
   .input-group {
     background-color: $white;
     .input-group-text {
-      pointer-events: none;
       border: 0;
       cursor: pointer;
       padding: 0;
@@ -28,7 +27,6 @@
       text-align: center;
       justify-content: center;
       min-height: 45px;
-
     }
 
     .date-range-wrapper {

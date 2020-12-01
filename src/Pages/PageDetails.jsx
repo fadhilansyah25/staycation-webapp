@@ -1,5 +1,6 @@
-import InputDate from "Component/Form/InputDate/InputDate";
-import InputNumber from "Component/Form/InputNumber/InputNumber";
+import Breadcrumb from "Component/Breadcrumb/Breadcrumb";
+// import InputDate from "Component/Form/InputDate/InputDate";
+// import InputNumber from "Component/Form/InputNumber/InputNumber";
 import Header from "Container/Header/Header";
 import React, { Component } from "react";
 
@@ -11,6 +12,10 @@ export default class PageDetails extends Component {
       endDate: new Date(),
       key: "selection",
     },
+    breadcrumbList: [
+      { pageTitle: "Home", pageHref: "" },
+      { pageTitle: "House Details", pageHref: "" },
+    ],
   };
 
   handleChange = (e) => {
@@ -22,34 +27,7 @@ export default class PageDetails extends Component {
       <>
         <Header {...this.props}></Header>
         <div className="container">
-          <div
-            className="row align-items-center justify-content-center"
-            style={{ height: "50vh" }}
-          >
-            <div className="col-auto">
-              <InputNumber
-                max={30}
-                onChange={this.handleChange}
-                name="numberValue"
-                value={this.state.numberValue}
-                suffix=" night"
-                isSuffixPlural={true}
-              />
-            </div>
-          </div>
-          <div
-            className="row align-items-center justify-content-center"
-            style={{ height: "50vh" }}
-          >
-            <div className="col-auto">
-              <InputDate
-                max={30}
-                onChange={this.handleChange}
-                name="dateValue"
-                value={this.state.dateValue}
-              />
-            </div>
-          </div>
+          <Breadcrumb data={this.state.breadcrumbList}></Breadcrumb>
         </div>
       </>
     );
