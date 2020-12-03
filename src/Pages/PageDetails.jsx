@@ -1,34 +1,38 @@
-import Breadcrumb from "Component/Breadcrumb/Breadcrumb";
-// import InputDate from "Component/Form/InputDate/InputDate";
-// import InputNumber from "Component/Form/InputNumber/InputNumber";
-import Header from "Container/Header/Header";
 import React, { Component } from "react";
+import Header from "Container/Header/Header";
+import PageDetailTitle from "Component/PageDetailTitle/PageDetailTitle";
+import itemDetails from "Json/itemDetails.json";
+import FeaturedImage from "Component/FeaturedImage/FeaturedImage";
+import PageDetailDescription from "Component/PageDetailDescription/PageDetailDescription";
 
 export default class PageDetails extends Component {
-  state = {
-    numberValue: "1",
-    dateValue: {
-      startDate: new Date(),
-      endDate: new Date(),
-      key: "selection",
-    },
-    breadcrumbList: [
-      { pageTitle: "Home", pageHref: "" },
-      { pageTitle: "House Details", pageHref: "" },
-    ],
-  };
-
-  handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
+  componentDidMount() {
+    window.title = "Details Page";
+    window.scrollTo(0, 0);
+  }
 
   render() {
+    const breadcrumb = [
+      { pageTitle: "Home", pageHref: "" },
+      { pageTitle: "PageDetails", pageHref: "pagedetails" },
+    ];
+
     return (
       <>
         <Header {...this.props}></Header>
-        <div className="container">
-          <Breadcrumb data={this.state.breadcrumbList}></Breadcrumb>
-        </div>
+        <PageDetailTitle
+          data={itemDetails}
+          breadcrumb={breadcrumb}
+        ></PageDetailTitle>
+        <FeaturedImage data={itemDetails.imageUrls}></FeaturedImage>
+        <section className="container">
+          <div className="row">
+            <div className="col-7 pr-5 justify-conten text-justify">
+              <PageDetailDescription data={itemDetails}></PageDetailDescription>
+            </div>
+            <div className="col-5">Booking Form</div>
+          </div>
+        </section>
       </>
     );
   }
