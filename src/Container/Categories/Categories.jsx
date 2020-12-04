@@ -7,10 +7,10 @@ import Button from "../../Component/Button/Button";
 export default function Categories({ data }) {
   return (
     <section className="container">
-      <Fade>
-        {data.map((category, index1) => {
-          return (
-            <div className="categories" key={`category${index1}`}>
+      {data.map((category, index1) => {
+        return (
+          <Fade>
+            <div className="categories" key={`category-${index1}`}>
               <h4>{category.name}</h4>
               <div className="container-grid">
                 {category.items.length === 0 ? (
@@ -22,7 +22,7 @@ export default function Categories({ data }) {
                 ) : (
                   category.items.map((item, index2) => {
                     return (
-                      <Fade bottom delay={200*index2}>
+                      <Fade bottom delay={200 * index2}>
                         <div
                           key={`category-${index1}-item-${index2}`}
                           className="item column-3 row-1"
@@ -66,9 +66,9 @@ export default function Categories({ data }) {
                 )}
               </div>
             </div>
-          );
-        })}
-      </Fade>
+          </Fade>
+        );
+      })}
     </section>
   );
 }

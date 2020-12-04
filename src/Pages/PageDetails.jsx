@@ -5,6 +5,9 @@ import itemDetails from "Json/itemDetails.json";
 import FeaturedImage from "Component/FeaturedImage/FeaturedImage";
 import PageDetailDescription from "Component/PageDetailDescription/PageDetailDescription";
 import BookingForm from "Component/BookingForm/BookingForm";
+import Testimonials from "Container/Testimonials/Testimonials";
+import Categories from "Container/Categories/Categories";
+import Footer from "Container/Footer/Footer";
 
 export default class PageDetails extends Component {
   componentDidMount() {
@@ -17,6 +20,8 @@ export default class PageDetails extends Component {
       { pageTitle: "Home", pageHref: "" },
       { pageTitle: "PageDetails", pageHref: "pagedetails" },
     ];
+
+    
 
     return (
       <>
@@ -36,6 +41,9 @@ export default class PageDetails extends Component {
             </div>
           </div>
         </section>
+        <Categories data={itemDetails.categories}></Categories>
+        <Testimonials data={itemDetails.testimonial}></Testimonials>
+        <Footer></Footer>
       </>
     );
   }
