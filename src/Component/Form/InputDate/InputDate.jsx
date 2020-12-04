@@ -69,7 +69,7 @@ export default function InputDate(props) {
         {isShowed && (
           <div className="date-range-wrapper">
             <DateRange
-              editableDateInputs={true}
+              editableDateInputs
               onChange={datePickerChange}
               moveRangeOnFirstSelection={false}
               onRangeFocusChange={check}

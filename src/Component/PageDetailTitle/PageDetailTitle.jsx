@@ -5,7 +5,7 @@ import Breadcrumb from "Component/Breadcrumb/Breadcrumb";
 
 export default function PageDetails({ data, breadcrumb }) {
   return (
-    <section className="container spacing-sm">
+    <div className="container spacing-sm" style={{marginTop: '50px'}}>
       <Fade bottom>
         <div className="row align-items-center">
           <div className="col">
@@ -20,6 +20,6 @@ export default function PageDetails({ data, breadcrumb }) {
           <div className="col"></div>
         </div>
       </Fade>
-    </section>
+    </div>
   );
 }

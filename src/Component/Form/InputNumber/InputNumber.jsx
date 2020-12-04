@@ -87,7 +87,7 @@ export default function InputNumber(props) {
 
 InputNumber.defaultProps = {
   min: 1,
-  max: 1,
+  max: 30,
   prefix: "",
   suffix: "",
 };
