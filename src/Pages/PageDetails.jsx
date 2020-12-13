@@ -6,7 +6,7 @@ import FeaturedImage from "Component/FeaturedImage/FeaturedImage";
 import PageDetailDescription from "Component/PageDetailDescription/PageDetailDescription";
 import BookingForm from "Component/BookingForm/BookingForm";
 import Testimonials from "Container/Testimonials/Testimonials";
-import Categories from "Container/Categories/Categories";
+import ThingsToDo from "Container/ThingsToDo/ThingsToDo"
 import Footer from "Container/Footer/Footer";
 
 export default class PageDetails extends Component {
@@ -41,7 +41,7 @@ export default class PageDetails extends Component {
             </div>
           </div>
         </section>
-        <Categories data={itemDetails.categories}></Categories>
+        <ThingsToDo data={itemDetails.activities}></ThingsToDo>
         <Testimonials data={itemDetails.testimonial}></Testimonials>
         <Footer></Footer>
       </>

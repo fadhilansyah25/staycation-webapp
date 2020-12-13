@@ -78,25 +78,29 @@
       "_id": "asd1293uasdads1",
       "name": "Kebun Park",
       "type": "Nature",
-      "imageUrl": "/images/categoryItem1.png"
+      "imageUrl": "/images/activities/categoryItem1.png",
+      "popular" : false
     },
     {
       "_id": "asd1293uasdads1",
       "name": "Water land",
       "type": "Pool",
-      "imageUrl": "/images/categoryItem2.png"
+      "imageUrl": "/images/activities/categoryItem2.png",
+      "popular" : false
     },
     {
       "_id": "asd1293uasdads1",
       "name": "Kebun Park",
       "type": "Nature",
-      "imageUrl": "/images/categoryItem3.png"
+      "imageUrl": "/images/activities/categoryItem3.png",
+      "popular" : false
     },
     {
       "_id": "asd1293uasdads1",
       "name": "Water land",
       "type": "Pool",
-      "imageUrl": "/images/categoryItem4.png"
+      "imageUrl": "/images/activities/categoryItem4.png",
+      "popular" : true
     }
   ],
   "categories": [
@@ -141,7 +145,7 @@
   ],
   "testimonial": {
     "_id": "asd1293uasdads1",
-    "imageUrl": "/images/testimonial-detailspage.jpg",
+    "imageUrl": "/images/testimonials/testimonial-detailspage.svg",
     "name": "Happy Family",
     "rate": 4.25,
     "content": "What a great trip with my family and I should try again and again next time soon...",
