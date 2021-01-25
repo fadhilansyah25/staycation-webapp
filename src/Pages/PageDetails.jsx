@@ -11,7 +11,7 @@ import Footer from "Container/Footer/Footer";
 
 export default class PageDetails extends Component {
   componentDidMount() {
-    window.title = "Details Page";
+    document.title = "Details Page";
     window.scrollTo(0, 0);
   }
 
