@@ -6,7 +6,7 @@ import FeaturedImage from "Component/FeaturedImage/FeaturedImage";
 import PageDetailDescription from "Component/PageDetailDescription/PageDetailDescription";
 import BookingForm from "Component/BookingForm/BookingForm";
 import Testimonials from "Container/Testimonials/Testimonials";
-import ThingsToDo from "Container/ThingsToDo/ThingsToDo"
+import ThingsToDo from "Container/ThingsToDo/ThingsToDo";
 import Footer from "Container/Footer/Footer";
 
 export default class PageDetails extends Component {
@@ -20,8 +20,6 @@ export default class PageDetails extends Component {
       { pageTitle: "Home", pageHref: "" },
       { pageTitle: "PageDetails", pageHref: "pagedetails" },
     ];
-
-    
 
     return (
       <>
