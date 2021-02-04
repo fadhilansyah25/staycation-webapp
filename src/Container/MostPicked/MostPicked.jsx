@@ -9,7 +9,7 @@ import Fade from "react-reveal/Fade";
 function MostPicked(props) {
   return (
     <section className="container mostpicked" ref={props.refMostPicked}>
-      <h4>Most Picked</h4>
+      <Fade delay={300}><h4>Most Picked</h4></Fade>
       <div className="container-grid">
         {/* {props.data.mostPicked.map((item, index) => {
                     return (
@@ -27,9 +27,8 @@ function MostPicked(props) {
 
         {props.data.mostPicked.map((item, index) => {
           return (
-            <Fade bottom delay={200*index}>
+            <Fade bottom delay={200 * index} key={`mostPicked-${index}`}>
               <div
-                key={`mostPicked-${index}`}
                 className={`item column-4 ${index === 0 ? "row-2" : "row-1"}`}
               >
                 <div className="card card-featured">

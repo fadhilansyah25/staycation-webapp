@@ -49,10 +49,10 @@ export default function InputText(props) {
           </div>
         )}
         <input
-          name={value}
+          name={name}
           type={type}
           pattern={pattern}
-          className={["form-control", outerClassName].join(" ")}
+          className={["form-control", inputClassName].join(" ")}
           value={value}
           placeholder={placeholder}
           onChange={onChange}
