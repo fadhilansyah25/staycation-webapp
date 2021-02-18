@@ -8,10 +8,11 @@ import BookingForm from "Component/BookingForm/BookingForm";
 import Testimonials from "Container/Testimonials/Testimonials";
 import ThingsToDo from "Container/ThingsToDo/ThingsToDo";
 import Footer from "Container/Footer/Footer";
+import Fade from 'react-reveal/Fade'
 
 export default class PageDetails extends Component {
   componentDidMount() {
-    document.title = "Details Page";
+    document.title = "Staycation | Details Page";
     window.scrollTo(0, 0);
   }
 
@@ -40,7 +41,9 @@ export default class PageDetails extends Component {
           </div>
         </section>
         <ThingsToDo data={itemDetails.activities}></ThingsToDo>
-        <Testimonials data={itemDetails.testimonial}></Testimonials>
+        <Fade bottom distance="50px">
+          <Testimonials data={itemDetails.testimonial}></Testimonials>
+        </Fade>
         <Footer></Footer>
       </>
     );

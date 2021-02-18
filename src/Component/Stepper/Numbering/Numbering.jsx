@@ -3,9 +3,8 @@ import Fade from "react-reveal/Fade";
 import propTypes from "prop-types";
 import "./Numbering.scss";
 
-export default function Numbering({ style, className, data, current }) {
+export default function Numbering({ style, data, className, current }) {
   const keysOfData = Object.keys(data);
-
   return (
     <Fade>
       <ol className={["stepper", className].join(" ")} style={style}>

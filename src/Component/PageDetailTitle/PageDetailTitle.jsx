@@ -6,7 +6,7 @@ import Breadcrumb from "Component/Breadcrumb/Breadcrumb";
 export default function PageDetails({ data, breadcrumb }) {
   return (
     <div className="container spacing-sm" style={{marginTop: '50px'}}>
-      <Fade bottom>
+      <Fade>
         <div className="row align-items-center">
           <div className="col">
             <Breadcrumb data={breadcrumb}></Breadcrumb>

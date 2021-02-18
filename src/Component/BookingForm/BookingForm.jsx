@@ -12,7 +12,7 @@ export default class BookingForm extends Component {
         duration: 1,
         date: {
           startDate: new Date(),
-          endDate: new Date(),
+          endDate: new Date().setDate(new Date().getDate() + 1),
           key: "selection",
         },
       },
@@ -35,7 +35,7 @@ export default class BookingForm extends Component {
     if (prevState.data.date !== data.date) {
       const startDate = new Date(data.date.startDate);
       const endDate = new Date(data.date.endDate);
-      const countDuration = new Date(endDate - startDate).getDate();
+      const countDuration = new Date(endDate - startDate).getDate() - 1;
       this.setState({
         data: {
           ...this.state.data,
@@ -47,12 +47,30 @@ export default class BookingForm extends Component {
     if (prevState.data.duration !== data.duration) {
       const startDate = new Date(data.date.startDate);
       const endDate = new Date(
-        startDate.setDate(startDate.getDate() + +data.duration - 1)
+        startDate.setDate(startDate.getDate() + +data.duration)
       );
       this.setState({
         ...this.state,
         data: {
           ...this.state.data,
+          date: {
+            ...this.state.data.date,
+            endDate: endDate,
+          },
+        },
+      });
+    }
+
+    if (prevState.data.duration === 0) {
+      const startDate = new Date(data.date.startDate);
+      const endDate = new Date(
+        startDate.setDate(startDate.getDate() + +data.duration)
+      );
+      this.setState({
+        ...this.state,
+        data: {
+          ...this.state.data,
+          duration: 1,
           date: {
             ...this.state.data.date,
             endDate: endDate,
@@ -110,8 +128,9 @@ export default class BookingForm extends Component {
           isPrimary
           isBlock
           onClick={startBooking}
+          type="link" href="/checkout"
         >
-          Continue To{" "}
+          Continue To Book
         </Button>
       </div>
     );

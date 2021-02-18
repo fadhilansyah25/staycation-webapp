@@ -27,7 +27,7 @@ export default function Categories({ data }) {
                       key={`category-${index1}-item-${index2}`}
                       className="item column-3 row-1"
                     >
-                      <Fade bottom delay={200 * index2}>
+                      <Fade bottom delay={200 * index2} distance="50px">
                         <div className="card">
                           {item.isPopular && (
                             <div className="tag">

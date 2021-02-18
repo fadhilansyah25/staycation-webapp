@@ -6,28 +6,31 @@ import InputFile from "Component/Form/InputFile/InputFile";
 import InputText from "Component/Form/InputText/InputText";
 
 export default function Payment(props) {
-  const { data, ItemDetails, checkout } = props;
+  const { data, itemDetails, checkout } = props;
   const tax = 10;
-  const subTotal = ItemDetails.price * checkout.duration;
+  const subTotal = itemDetails.price * checkout.duration;
   const grandTotal = (subTotal * tax) / 100 + subTotal;
 
   return (
     <Fade>
-      <div className="container" style={{ marginBottom: 30 }}>
+      <div
+        className="container"
+        style={{ marginBottom: 30, fontFamily: "Roboto" }}
+      >
         <div className="row justify-content-center align-items-center">
           <div className="col-5 border-right py-5" style={{ paddingRight: 80 }}>
             <Fade delay={300}>
-              <p className="mb-4">Transfer Pembayaran:</p>
-              <p>Tax: {tax}%</p>
-              <p>Sub Total: ${subTotal} USD</p>
-              <p>Total: ${grandTotal} USD</p>
+              <p className="mb-4" style={{fontWeight: 500}}>Transfer Pembayaran:</p>
+              <p>Tax      : <span style={{fontWeight: 500}}>{tax}%</span></p>
+              <p>Sub Total: <span style={{fontWeight: 500}}>${subTotal} USD</span></p>
+              <p>Total    : <span style={{fontWeight: 500}}>${grandTotal} USD</span></p>
               <div className="row mt-4">
                 <div className="col-3 text-right">
                   <img src={logoBCA} alt="bank central asia" />
                 </div>
                 <div className="col">
                   <dl>
-                    <dd>Bank Central Asia</dd>
+                    <dd style={{fontWeight: 500}}>Bank Central Asia</dd>
                     <dd>2505 1997</dd>
                     <dd>BuildWith Angga</dd>
                   </dl>
@@ -39,7 +42,7 @@ export default function Payment(props) {
                 </div>
                 <div className="col">
                   <dl>
-                    <dd>Bank Mandiri</dd>
+                    <dd style={{fontWeight: 500}}>Bank Mandiri</dd>
                     <dd>2505 1997</dd>
                     <dd>BuildWith Angga</dd>
                   </dl>
@@ -49,7 +52,9 @@ export default function Payment(props) {
           </div>
           <div className="col-5 py-5" style={{ paddingLeft: 80 }}>
             <Fade delay={600}>
-              <label htmlFor="proofPayment">Upload Bukti Transfer</label>
+              <label style={{ fontWeight: 500 }} htmlFor="proofPayment">
+                Upload Bukti Transfer
+              </label>
               <InputFile
                 accept="image/*"
                 id="proofPayment"
@@ -57,7 +62,9 @@ export default function Payment(props) {
                 value={data.proofPayment}
                 onChange={props.onChange}
               />
-              <label htmlFor="bankName">Bank Name</label>
+              <label style={{ fontWeight: 500 }} htmlFor="bankName">
+                Bank Name
+              </label>
               <InputText
                 id="bankName"
                 name="bankName"
@@ -65,7 +72,9 @@ export default function Payment(props) {
                 value={data.bankName}
                 onChange={props.onChange}
               />
-              <label htmlFor="bankHolder">Nama Pengirim</label>
+              <label style={{ fontWeight: 500 }} htmlFor="bankHolder">
+                Nama Pengirim
+              </label>
               <InputText
                 id="bankHolder"
                 name="bankHolder"

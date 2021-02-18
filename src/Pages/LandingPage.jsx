@@ -25,14 +25,14 @@ export default class LandingPage extends Component {
     return (
       <>
         <Header {...this.props} />
-        <Fade bottom>
+        <Fade bottom distance="50px">
           <Hero data={landingPage} refMostPicked={this.refMostPicked} />
         </Fade>
         <Fade>
           <MostPicked refMostPicked={this.refMostPicked} data={landingPage} />
         </Fade>
         <Categories data={landingPage.categories} />
-        <Fade bottom>
+        <Fade bottom distance="50px">
           <Testimonials data={landingPage.testimonial} />
         </Fade>
         <Footer></Footer>

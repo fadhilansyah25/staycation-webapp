@@ -27,7 +27,7 @@ function MostPicked(props) {
 
         {props.data.mostPicked.map((item, index) => {
           return (
-            <Fade bottom delay={200 * index} key={`mostPicked-${index}`}>
+            <Fade bottom delay={200 * index} distance="50px" key={`mostPicked-${index}`}>
               <div
                 className={`item column-4 ${index === 0 ? "row-2" : "row-1"}`}
               >
