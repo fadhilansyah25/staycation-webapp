@@ -3,16 +3,20 @@ import propTypes from "prop-types";
 import InputNumber from "Component/Form/InputNumber/InputNumber";
 import InputDate from "Component/Form/InputDate/InputDate";
 import Button from "Component/Button/Button";
+import { withRouter } from "react-router-dom";
 
-export default class BookingForm extends Component {
+class BookingForm extends Component {
   constructor(props) {
     super(props);
+    var date = new Date();
+    // add a day
+    date.setDate(date.getDate() + 1);
     this.state = {
       data: {
         duration: 1,
         date: {
           startDate: new Date(),
-          endDate: new Date().setDate(new Date().getDate() + 1),
+          endDate: date,
           key: "selection",
         },
       },
@@ -80,9 +84,22 @@ export default class BookingForm extends Component {
     }
   }
 
+  startBooking = () => {
+    const { data } = this.state;
+    this.props.startBooking({
+      _id: this.props.itemDetails._id,
+      duration: data.duration,
+      date: {
+        startDate: data.date.startDate,
+        endDate: data.date.endDate,
+      },
+    });
+    this.props.history.push("/checkout");
+  };
+
   render() {
     const { data } = this.state;
-    const { itemDetails, startBooking } = this.props;
+    const { itemDetails } = this.props;
 
     return (
       <div className="card shadow" style={{ padding: "60px 80px" }}>
@@ -104,11 +121,7 @@ export default class BookingForm extends Component {
         />
 
         <label htmlFor="date">Pick a date</label>
-        <InputDate
-          onChange={this.updateData}
-          name="date"
-          value={data.date}
-        />
+        <InputDate onChange={this.updateData} name="date" value={data.date} />
         <h6
           className="text-gray-500 font-weight-light"
           style={{ marginBottom: 40 }}
@@ -127,8 +140,7 @@ export default class BookingForm extends Component {
           hasShadow
           isPrimary
           isBlock
-          onClick={startBooking}
-          type="link" href="/checkout"
+          onClick={this.startBooking}
         >
           Continue To Book
         </Button>
@@ -141,3 +153,5 @@ BookingForm.propTypes = {
   itemDetails: propTypes.object,
   startBookings: propTypes.func,
 };
+
+export default withRouter(BookingForm);

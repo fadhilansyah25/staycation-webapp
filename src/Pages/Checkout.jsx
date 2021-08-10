@@ -3,6 +3,7 @@ import Header from "Container/Header/Header";
 import Fade from "react-reveal/Fade";
 import Button from "../Component/Button/Button";
 
+import { connect } from "react-redux";
 import Controller from "../Component/Stepper/Controller/Controller";
 import MainContent from "../Component/Stepper/MainContent/MainContent";
 import Meta from "../Component/Stepper/Meta/Meta";
@@ -15,7 +16,7 @@ import Completed from "../Container/Checkout/Completed";
 
 import ItemDetails from "../Json/itemDetails.json";
 
-export default class Checkout extends Component {
+class Checkout extends Component {
   state = {
     data: {
       firstname: "",
@@ -37,17 +38,34 @@ export default class Checkout extends Component {
     });
   };
 
-  componentDidMount(){
+  componentDidMount() {
     document.title = "Staycation | Checkout";
     window.scrollTo(0, 0);
   }
 
   render() {
     const { data } = this.state;
+    const { checkout } = this.props;
 
-    const checkout = {
-      duration: 3,
-    };
+    if (!checkout) {
+      return (
+        <div className="container">
+          <div
+            className="row align-items-center justify-content-center text-center"
+            style={{ height: "100vh" }}
+          >
+            <div className="col-3">
+              Pilih Kamar dulu
+              <div>
+                <Button className="btn mt-5" type="link" href="/" isLight>
+                  Back
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
 
     const steps = {
       bookingInformation: {
@@ -82,7 +100,7 @@ export default class Checkout extends Component {
     };
     return (
       <>
-        <Header isCentered/>
+        <Header isCentered />
         <Stepper steps={steps}>
           {(prevStep, nextStep, CurrentStep, steps) => (
             <>
@@ -178,3 +196,9 @@ export default class Checkout extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  checkout: state.checkout,
+});
+
+export default connect(mapStateToProps)(Checkout);

@@ -1,16 +1,20 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import Header from "Container/Header/Header";
 import PageDetailTitle from "Component/PageDetailTitle/PageDetailTitle";
-import itemDetails from "Json/itemDetails.json";
 import FeaturedImage from "Component/FeaturedImage/FeaturedImage";
 import PageDetailDescription from "Component/PageDetailDescription/PageDetailDescription";
 import BookingForm from "Component/BookingForm/BookingForm";
 import Testimonials from "Container/Testimonials/Testimonials";
 import ThingsToDo from "Container/ThingsToDo/ThingsToDo";
 import Footer from "Container/Footer/Footer";
-import Fade from 'react-reveal/Fade'
+import Fade from "react-reveal/Fade";
 
-export default class PageDetails extends Component {
+import itemDetails from "Json/itemDetails.json";
+
+import { checkoutBooking } from "store/actions/checkout";
+
+class PageDetails extends Component {
   componentDidMount() {
     document.title = "Staycation | Details Page";
     window.scrollTo(0, 0);
@@ -36,7 +40,10 @@ export default class PageDetails extends Component {
               <PageDetailDescription data={itemDetails}></PageDetailDescription>
             </div>
             <div className="col-5">
-              <BookingForm itemDetails={itemDetails}></BookingForm>
+              <BookingForm
+                itemDetails={itemDetails}
+                startBooking={this.props.checkoutBooking}
+              ></BookingForm>
             </div>
           </div>
         </section>
@@ -49,3 +56,5 @@ export default class PageDetails extends Component {
     );
   }
 }
+
+export default connect(null, { checkoutBooking })(PageDetails);
