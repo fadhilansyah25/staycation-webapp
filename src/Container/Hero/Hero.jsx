@@ -43,21 +43,21 @@ export default function Hero(props) {
             <div className="col-auto thumb-info">
               <img src={IconTraveler} alt="" />
               <h6 className="mt-3">
-                {numberFormat(props.data.hero.travelers)}{" "}
+                {numberFormat(props.data.hero.traveller)}{" "}
                 <span className="text-gray-500 font-weight">Traveler</span>
               </h6>
             </div>
             <div className="col-auto thumb-info">
               <img src={IconCities} alt="" />
               <h6 className="mt-3">
-                {numberFormat(props.data.hero.treasures)}{" "}
+                {numberFormat(props.data.hero.treasure)}{" "}
                 <span className="text-gray-500 font-weight">Treasures</span>
               </h6>
             </div>
             <div className="col-auto thumb-info">
               <img src={IconPlace} alt="" />
               <h6 className="mt-3">
-                {numberFormat(props.data.hero.cities)}{" "}
+                {numberFormat(props.data.hero.city)}{" "}
                 <span className="text-gray-500 font-weight">Cities/Hotel</span>
               </h6>
             </div>

@@ -8,20 +8,23 @@ export default function Categories({ data }) {
   return (
     <section className="container">
       {data.map((category, index1) => {
+        if (category.itemId.length === 0) return null;
         return (
           <div className="categories" key={`category-${index1}`}>
             <Fade delay={300}>
               <h4>{category.name}</h4>
             </Fade>
             <div className="container-grid">
-              {category.items.length === 0 ? (
-                <div className="row">
-                  <div className="col-auto align-items-center">
-                    There is no property at this category
-                  </div>
-                </div>
-              ) : (
-                category.items.map((item, index2) => {
+              {
+              // (
+              //   <div className="row">
+              //     <div className="col-auto align-items-center">
+              //       There is no property at this category
+              //     </div>
+              //   </div>
+              // ) : 
+              (
+                category.itemId.map((item, index2) => {
                   return (
                     <div
                       key={`category-${index1}-item-${index2}`}
@@ -39,7 +42,7 @@ export default function Categories({ data }) {
                             style={{ height: "180px" }}
                           >
                             <img
-                              src={item.imageUrl}
+                              src={item.imageId[0] ? `${process.env.REACT_APP_HOST}/${item.imageId[0].imageUrl}` : ""}
                               alt={item.name}
                               className="img-cover"
                             />
@@ -50,7 +53,7 @@ export default function Categories({ data }) {
                               className="streched-link d-block text-gray-800"
                               href={`/properties/${item._id}`}
                             >
-                              <h5>{item.name}</h5>
+                              <h5>{item.title}</h5>
                             </Button>
                             <span className="text-gray-800">
                               {item.city}, {item.country}

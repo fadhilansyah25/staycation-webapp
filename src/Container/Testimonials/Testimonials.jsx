@@ -10,7 +10,7 @@ export default function Testimonials({ data }) {
       <div className="row align-items-center">
         <div className="col-auto testimonial-img" style={{ marginRight: "70px" }}>
           <div className="image-testimonial">
-            <img src={data.imageUrl} alt="Testimonial" />
+            <img src={`${process.env.REACT_APP_HOST}/${data.imageUrl}`} alt="Testimonial" />
           </div>
           <div className="img-frame">
             <img src={imageFrame} alt="Testimonial-frame" />
