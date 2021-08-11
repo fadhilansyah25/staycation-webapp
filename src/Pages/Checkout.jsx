@@ -13,6 +13,7 @@ import Stepper from "Component/Stepper/Stepper";
 import BookingInformation from "../Container/Checkout/BookingInformation";
 import Payment from "../Container/Checkout/Payment";
 import Completed from "../Container/Checkout/Completed";
+import { submitBooking } from "store/actions/checkout";
 
 class Checkout extends Component {
   state = {
@@ -24,6 +25,7 @@ class Checkout extends Component {
       proofPayment: "",
       bankName: "",
       bankHolder: "",
+      bankId: "",
     },
   };
 
@@ -41,9 +43,39 @@ class Checkout extends Component {
     window.scrollTo(0, 0);
   }
 
+  _Submit = (nextStep) => {
+    const { data } = this.state;
+    const { checkout } = this.props;
+    const payload = new FormData();
+
+    payload.append("idItem", checkout._id);
+    payload.append("duration", checkout.duration);
+    payload.append("bookingDateStart", checkout.date.startDate);
+    payload.append("bookingDateEnd", checkout.date.endDate);
+    payload.append("firstName", data.firstname);
+    payload.append("lastName", data.lastname);
+    payload.append("emailAddress", data.email);
+    payload.append("phoneNumber", data.phone);
+    payload.append("accountHolder", data.bankHolder);
+    payload.append("bankFrom", "Mandiri");
+    payload.append("image", data.proofPayment[0]);
+    payload.append("bankId", data.bankId);
+
+    this.props
+      .submitBooking(payload)
+      .then((res) => {
+        nextStep();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   render() {
     const { data } = this.state;
     const { checkout, page } = this.props;
+
+    console.log(data, page[checkout._id], checkout);
 
     if (!checkout) {
       return (
@@ -160,7 +192,7 @@ class Checkout extends Component {
                           isBlock
                           isPrimary
                           hasShadow
-                          onClick={nextStep}
+                          onClick={() => this._Submit(nextStep)}
                         >
                           Continue to book
                         </Button>
@@ -205,4 +237,4 @@ const mapStateToProps = (state) => ({
   page: state.page,
 });
 
-export default connect(mapStateToProps)(Checkout);
+export default connect(mapStateToProps, { submitBooking })(Checkout);
