@@ -4,7 +4,6 @@ import InputText from "../../Component/Form/InputText/InputText";
 
 export default function BookingInformation(props) {
   const { data, itemDetails, checkout } = props;
-
   return (
     <div
       className="container"
@@ -16,15 +15,15 @@ export default function BookingInformation(props) {
             <div className="card">
               <figure className="img-wrapper" style={{ height: 270 }}>
                 <img
-                  src={itemDetails.imageUrls[0].url}
-                  alt={itemDetails.name}
+                  src={`${process.env.REACT_APP_HOST}/${itemDetails.imageId[0].imageUrl}`}
+                  alt={itemDetails.title}
                   className="img-cover"
                 />
               </figure>
               <div className="row align-items-center">
                 <div className="col" style={{fontWeight: 500}}>
                   <div className="meta-wrapper">
-                    <h5>{itemDetails.name}</h5>
+                    <h5>{itemDetails.title}</h5>
                     <span className="text-gray-500">
                       {itemDetails.city}, {itemDetails.country}
                     </span>

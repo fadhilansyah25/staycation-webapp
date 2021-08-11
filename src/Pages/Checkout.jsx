@@ -14,8 +14,6 @@ import BookingInformation from "../Container/Checkout/BookingInformation";
 import Payment from "../Container/Checkout/Payment";
 import Completed from "../Container/Checkout/Completed";
 
-import ItemDetails from "../Json/itemDetails.json";
-
 class Checkout extends Component {
   state = {
     data: {
@@ -45,7 +43,7 @@ class Checkout extends Component {
 
   render() {
     const { data } = this.state;
-    const { checkout } = this.props;
+    const { checkout, page } = this.props;
 
     if (!checkout) {
       return (
@@ -57,7 +55,12 @@ class Checkout extends Component {
             <div className="col-3">
               Pilih Kamar dulu
               <div>
-                <Button className="btn mt-5" type="link" href="/" isLight>
+                <Button
+                  className="btn mt-5"
+                  type="button"
+                  onClick={() => this.props.history.goBack()}
+                  isLight
+                >
                   Back
                 </Button>
               </div>
@@ -75,7 +78,7 @@ class Checkout extends Component {
           <BookingInformation
             data={data}
             checkout={checkout}
-            itemDetails={ItemDetails}
+            itemDetails={page[checkout._id]}
             onChange={this.onChange}
           />
         ),
@@ -87,7 +90,7 @@ class Checkout extends Component {
           <Payment
             data={data}
             checkout={checkout}
-            itemDetails={ItemDetails}
+            itemDetails={page[checkout._id]}
             onChange={this.onChange}
           />
         ),
@@ -135,10 +138,10 @@ class Checkout extends Component {
                     )}
                   <Button
                     className="btn btn-outline-primary mb-5"
-                    type="link"
                     isBlock
                     isLight
-                    href={`/properties/${ItemDetails._id}`}
+                    type="link"
+                    href={`/properties/${page[checkout._id]._id}`}
                   >
                     Cancel
                   </Button>
@@ -199,6 +202,7 @@ class Checkout extends Component {
 
 const mapStateToProps = (state) => ({
   checkout: state.checkout,
+  page: state.page,
 });
 
 export default connect(mapStateToProps)(Checkout);

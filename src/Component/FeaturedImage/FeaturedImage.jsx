@@ -5,7 +5,7 @@ export default function FeaturedImage({ data }) {
   return (
     <section className="container">
       <div className="container-grid sm">
-        {data.map((item, index) => {
+        {data.imageId.map((item, index) => {
           return (
             <div
               key={`FeaturedImage-${index}`}
@@ -13,13 +13,13 @@ export default function FeaturedImage({ data }) {
                 index > 0 ? "row-1" : "row-2"
               }`}
             >
-                <Fade bottom delay={300*index} distance="50px">
-                    <div className="card h-100">
-                        <figure className="img-wrapper">
-                            <img src={item.url} alt={item._id} className="img-cover"/>
-                        </figure>
-                    </div>
-                </Fade>
+              <Fade bottom delay={300 * index} distance="50px">
+                <div className="card h-100">
+                  <figure className="img-wrapper">
+                    <img src={`${process.env.REACT_APP_HOST}/${item.imageUrl}`} alt={item._id} className="img-cover" />
+                  </figure>
+                </div>
+              </Fade>
             </div>
           );
         })}

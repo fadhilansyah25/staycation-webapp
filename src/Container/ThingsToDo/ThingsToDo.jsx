@@ -31,7 +31,7 @@ export default function ThingsToDo({ data }) {
                     )}
                     <figure className="img-wrapper" style={{ height: "180px" }}>
                       <img
-                        src={item.imageUrl}
+                        src={`${process.env.REACT_APP_HOST}/${item.imageUrl}`}
                         alt={item.name}
                         className="img-cover"
                       />

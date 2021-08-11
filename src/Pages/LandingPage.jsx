@@ -20,9 +20,9 @@ class LandingPage extends Component {
     document.title = "Staycation | Home";
     window.scrollTo(0, 0);
 
-    if (!this.props.page.landingPage)
+    if (!this.props.page.landingPage) 
       this.props.fetchPage(
-        `https://staycation-server-fadil.herokuapp.com/api/v1/member/landing-page`,
+        `${process.env.REACT_APP_HOST}/api/v1/member/landing-page`,
         "landingPage"
       );
   }
@@ -31,7 +31,24 @@ class LandingPage extends Component {
     const { page } = this.props;
 
     if (!page.hasOwnProperty("landingPage")) {
-      return <em>Loading...</em>;
+      return (
+        <div className="container">
+          <div
+            className="row align-items-center justify-content-center text-center"
+            style={{ height: "100vh" }}
+          >
+            <div className="col">
+              <div
+                className="spinner-border"
+                style={{ width: "3rem", height: "3rem" }}
+                role="status"
+              >
+              </div>
+              <p className="mt-5">Loading ...</p>
+            </div>
+          </div>
+        </div>
+      );
     }
 
     return (
